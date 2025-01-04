@@ -75,7 +75,7 @@ exports.id=229,exports.ids=[229],exports.modules={49539:(e,r,t)=>{"use strict";t
       COUNT(CASE WHEN h.status = 'Not_Reachable' THEN 1 END) as "Not Reachable",
       COUNT(CASE WHEN h.status = 'Wrong_Number' THEN 1 END) as "Wrong Number",
       COUNT(CASE WHEN h.status = 'Called_Postponed' THEN 1 END) as "Called Postponed",
-      COUNT(*) as contacts
+      COUNT(h.id) as contacts
     FROM users u
     LEFT JOIN hr_contacts h ON u.email = h.volunteer_email
     WHERE u.role = 'volunteer' 
@@ -95,7 +95,7 @@ exports.id=229,exports.ids=[229],exports.modules={49539:(e,r,t)=>{"use strict";t
       COUNT(CASE WHEN h.status = 'Not_Reachable' THEN 1 END) as "Not Reachable",
       COUNT(CASE WHEN h.status = 'Wrong_Number' THEN 1 END) as "Wrong Number",
       COUNT(CASE WHEN h.status = 'Called_Postponed' THEN 1 END) as "Called Postponed",
-      COUNT(*) as contacts
+      COUNT(h.id) as contacts
     FROM users u
     LEFT JOIN hr_contacts h ON u.email = h.incharge_email
     WHERE u.role = 'incharge'
